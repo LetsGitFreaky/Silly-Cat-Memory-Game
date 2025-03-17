@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cat Memory Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🐱 Cat Memory Game 🤯</h1>
+
+  <div class="controls">
+    <label for="difficulty">Select Difficulty</label>
+    <select id="difficulty">
+      <option value="easy">🐾 Easy (4x2)</option>
+      <option value="medium">😺 Medium (4x4)</option>
+      <option value="hard">😼 Hard (6x4)</option>
+    </select>
+    <button id="start-btn">Start Game</button>
+    <button id="mode-toggle">🌙 Toggle Dark Mode</button>
+    <button id="hint-btn">💡 Hint</button>
+  </div>
+
+  <div id="scoreboard">
+    🔥 Streak: <span id="streak">0</span> |
+    🏆 Highscore: <span id="highscore">0</span>
+  </div>
+
+  <p id="status">Moves Left: 0 | Time Left: 0s</p>
+  <div id="game-container"></div>
+
+  <div class="popup hidden" id="win-screen">
+    🎉 <strong>Congratulations, You Won!</strong> 🎉
+    <button onclick="startGame()">Play Again</button>
+  </div>
+
+  <div class="popup hidden" id="lose-screen">
+    😢 <strong id="lose-message">You lost!</strong> 😢
+    <button onclick="startGame()">Try Again</button>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
