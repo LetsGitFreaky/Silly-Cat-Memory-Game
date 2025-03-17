@@ -1,0 +1,110 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background-image: repeating-linear-gradient(
+    45deg, 
+    #f5f5f5 0, 
+    #f5f5f5 10px, 
+    #ffffff 10px, 
+    #ffffff 20px
+  );
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background: #1e1e1e;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #2a2a2a 0,
+    #2a2a2a 10px,
+    #1e1e1e 10px,
+    #1e1e1e 20px
+  );
+  color: white;
+}
+
+.controls {
+  margin-bottom: 1rem;
+}
+
+#game-container {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://media.tenor.com/SzmGs4XW3WMAAAAM/zazu-cat.gif');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: none;
+}
+
+.card.flipped img {
+  display: block;
+}
+
+.card.flipped {
+  background: none;
+  cursor: default;
+}
+
+.card.matched {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ✅ Centered popup fix */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #888;
+  display: inline-block;
+  z-index: 10000;
+}
+
+.dark-mode .popup {
+  background: #2e2e2e;
+  color: white;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Confetti fix */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
